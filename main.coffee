@@ -96,6 +96,29 @@ grade = (student) ->
         if student.tried then "B" else "C"
     else
         "D"
+    
+oldest = if 50 > 45 then "Jim" else "Bob"
+
+six = (one = 1) + (two = 2) + (three = 3)
+
+alert(
+    try 
+        DoesNotWork / undefined 
+    catch error
+        "And the error is... #{error}"
+)
+
+one = 1 
+one ?= 12
+
+ufo = flyingSaucer ? "plane"
+
+$ 'body'
+.click (e) ->
+    $ '.box'
+    .fadeIn 'fast'
+    .addClass 'show'
+.css 'background', 'white'
 
 ### FizzBuzz because why not? ###
 fizz_buzz = (i) -> 
