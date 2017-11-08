@@ -120,6 +120,94 @@ $ 'body'
     .addClass 'show'
 .css 'background', 'white'
 
+### operators ###
+
+-7 % 5 == 2 
+-7 %% 5 == 3
+
+launch() if ignition is on 
+
+vol = 10 if band isnt SpinalTap 
+
+print inspect "practice with #{name}"
+
+### FAT arrows ###
+
+Account = (customer, cart) ->
+    @customer = customer 
+    @cart = cart
+
+$('.shopping_cart').on 'click', (event) =>
+    @customer.purchase @cart
+
+perfectSquares = ->
+    num = 0
+    loop
+        num += 1
+        yeild num * num 
+    return 
+
+window.ps or= perfectSquares()
+
+### async functions ###
+
+sleep = (ms) ->
+    new Promise (resolve) ->
+        window.setTimeout resolve, ms
+
+countdown1 = (seconds) ->
+    for i in [seconds ..1]
+        say i 
+        await sleep 1000
+    say 'Takeoff!'
+
+countdown1 3
+
+### classes ###
+
+class Animal 
+    constructor: (@name) ->
+
+    move: (meters) ->
+        alert @name + "moved #{meters}m."
+
+class Snake extends Animal 
+    move: ->   
+        alert "Slithering"
+        super 5 
+
+class Horse extends Animal 
+    move: -> 
+        alert "Galloping"
+        super 50
+
+sam = new Snake "Steve the Snake"
+tom = new Horse "Harry the Horse"
+
+sam.move()
+tom.move()
+
+### switch stmts ###
+switch day 
+    when "Monday" then go work 
+    when "Tuesday" then go school
+    when "Friday", "Saturday"
+        if day is weekend
+            go drink
+            go relax 
+    when "Sunday" then go sleepIn
+    else wakeUpEarly
+
+### Try/Catch/Finally...?### 
+try 
+    allHellBreaksLoose()
+    catsAndDogsLivingTogether()
+catch error
+    print error
+finally 
+    cleanUp()
+
+
 ### FizzBuzz because why not? ###
 fizz_buzz = (i) -> 
     if i % 15 == 0
